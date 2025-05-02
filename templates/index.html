@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload PDF and Extract Text</title>
+    <style>
+        body { font-family: Arial; background-color: #f8f9fa; text-align: center; }
+        form { background: white; padding: 20px; border-radius: 8px; display: inline-block; }
+        textarea { width: 100%; height: 200px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Upload PDF, Extract, and Send to Chat</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required><br><br>
+        <button type="submit">Upload and Extract</button>
+    </form>
+
+    {% if extracted_text %}
+        <h2>Extracted Text</h2>
+        <textarea readonly>{{ extracted_text }}</textarea>
+    {% endif %}
+
+    <h2>Chat with Cataloging Bot</h2>
+    <iframe
+        src="https://www.chatbase.co/chatbot-iframe/rSb7GdUSjw1kxi8igKkib"
+
+        width="100%"
+        style="height: 700px"
+        frameborder="0">
+    </iframe>
+</body>
+</html>
